@@ -1,0 +1,24 @@
+{% include "header.html"%}
+
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content">
+		<div class="row" style="padding:5px; width:98%;">
+			<div id="home" class="tab-pane fade in active clear" style="text-align:center; padding:80px;">
+			   <h2>Select file to upload <br/>
+			   	<small>Maximum upload size is 3mb.<br>
+			   	</small>
+			   </h2>
+			   <br/>
+			   <form class="form-inline" style="padding:10px;" role="form" action="{% url "list" %}" method="post" enctype="multipart/form-data">
+         					{% csrf_token %}
+			   		<input style="padding:0px;" class="form-control" type="file" name="docfile" required id="id_docfile"><br/><br/>
+			   		<input type="submit" class="btn btn-primary" value="Upload">
+			   </form>
+			</div>		
+		</div>
+	</div>
+</main>
+
+  
+{% include "footer.html"%}

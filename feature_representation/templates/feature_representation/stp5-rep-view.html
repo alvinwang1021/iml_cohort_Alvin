@@ -1,0 +1,16 @@
+{% include "header.html"%}
+
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content container" style="padding-top: 25px;">
+		
+		<div class="row">
+           {{reprnt | safe}}	
+		</div>
+		<div class="row" id="button-div2">
+			<button class="btn btn-primary center-block" type="button" onclick="window.location.href='/clustering'">Next Step</button>
+		</div>		
+	</div>
+</main>
+
+{% include "footer.html"%}

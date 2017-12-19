@@ -1,0 +1,120 @@
+{% include "header.html"%}
+
+<style>
+	div.selectrow {
+		padding-top: 27px;
+	}
+</style>
+ <main role="main">
+<!-- here for cluster selection -->
+	<div class="page-content">
+		<div class="container">
+			<form class="form-horizontal" action="./clustering" method="post">
+             	{% csrf_token %}
+			  <div class="form-group">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>KMeans</h3></label>
+			    <div class="col-sm-10 selectrow">
+			      <div class="radio">
+			        <label>
+			          <input id="optionsRadios1" type="radio" checked name="clusteringModel" value="KMeans" aria-label="...">
+			        </label>
+			      </div>      
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-description" class="help-block">TheKMeans algorithm clusters data by trying to separate samples in n groups of equal variance, minimizing a criterion known as the inertia or within-cluster sum-of-squares. This algorithm requires the number of clusters to be specified. It scales well to large number of samples and has been used across a large range of application areas in many different fields.</span>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Example</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.In digital circuits, one-hot is a group of bits among which the legal combinations of values are only those with a single high (1) bit and all the others low (0).[1] A similar implementation in which all bits are '1' except one '0' is sometimes called one-cold.</span>
+			    </div>
+			  </div>
+			  <hr>
+			  <div class="form-group">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>MiniBatchKMeans</h3></label>
+			    <div class="col-sm-10 selectrow">
+			      <div class="radio">
+			        <label>
+			          <input id="optionsRadios2" type="radio" name="clusteringModel" value="MiniBatchKMeans" aria-label="...">
+			        </label>
+			      </div>      
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-description" class="help-block">The MiniBatchKMeans is a variant of the KMeans algorithm which uses mini-batches to reduce the computation time, while still attempting to optimise the same objective function. Mini-batches are subsets of the input data, randomly sampled in each training iteration. These mini-batches drastically reduce the amount of computation required to converge to a local solution. In contrast to other algorithms that reduce the convergence time of k-means, mini-batch k-means produces results that are generally only slightly worse than the standard algorithm.</span>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Example</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+			    </div>
+			  </div>
+			  <hr>
+			  		  <div class="form-group">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>Birch</h3></label>
+			    <div class="col-sm-10 selectrow">
+			      <div class="radio">
+			        <label>
+			          <input id="optionsRadios3" type="radio" name="clusteringModel" value="Birch" aria-label="...">
+			        </label>
+			      </div>      
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-description" class="help-block">The Birch builds a tree called the Characteristic Feature Tree (CFT) for the given data. The data is essentially lossy compressed to a set of Characteristic Feature nodes (CF Nodes). The CF Nodes have a number of subclusters called Characteristic Feature subclusters (CF Subclusters) and these CF Subclusters located in the non-terminal CF Nodes can have CF Nodes as children.</span>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Example</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.In digital circuits, one-hot is a group of bits among which the legal combinations of values are only those with a single high (1) bit and all the others low (0).[1] A similar implementation in which all bits are '1' except one '0' is sometimes called one-cold.</span>
+			    </div>
+			  </div>
+			  <hr>
+			  <div class="form-group">
+			    <label for="original_checkbox" class="col-sm-2 control-label"><h3>Agg-Clustering</h3></label>
+			    <div class="col-sm-10 selectrow">
+			      <div class="radio">
+			        <label>
+			          <input id="optionsRadios4" type="radio" name="clusteringModel" value="AgglomerativeClustering" aria-label="...">
+			        </label>
+			      </div>      
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-description" class="help-block">The AgglomerativeClustering performs a hierarchical clustering using a bottom up approach: each observation starts in its own cluster, and clusters are successively merged together. The linkage criteria determines the metric used for the merge strategy.</span>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Example</label>
+			    <div class="col-sm-10">
+					<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			  	<label for="inputnocluster" class="col-sm-2 control-label">Number of Cluster: </label>
+			  	    <div class="col-sm-10">
+				      <input type="number" class="form-control" id="inputnocluster" name="clu_num" value="3" placeholder="10">
+				    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">Click here</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+	</div>
+</main>	
+{% include "footer.html"%}

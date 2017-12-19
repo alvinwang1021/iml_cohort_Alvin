@@ -1,0 +1,27 @@
+{% include "header.html"%}
+
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content container">
+		<form action="{% url "renew" %}" method="post" enctype="multipart/form-data" 
+		class="form-horizontal  center-block" style="width: 30%;text-align:center">
+		{% csrf_token %}
+			<div class="form-group">
+						   <h2>Select required features <br/>
+						   </h2>				
+				<span id="helpBlock-example" class="help-block">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</span>
+				<select name="new_features" multiple class="form-control" style="min-height: 200px;">
+ 
+			      {% for f in features %}
+				      <option value="{{f}}">{{f}}</option>
+				  {% endfor %}
+			 
+			</select>
+			
+			<input type="submit" class="btn btn-primary" value="Select" style="margin-top: 15px;">
+			</div>
+		</form>
+	</div>
+</main>
+
+  {% include "footer.html"%}

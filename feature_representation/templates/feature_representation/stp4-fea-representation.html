@@ -1,0 +1,98 @@
+{% include "header.html"%}
+<main role="main">
+<!-- here for upload file content -->
+	<div class="page-content" style="padding-top: 25px;">
+		<div class="container">
+		<form class="form-horizontal" action="./features" method="post">
+		 {% csrf_token %}
+		  <div class="form-group">
+		    <label for="original_checkbox" class="col-sm-2 control-label">Original</label>
+		    <div class="col-sm-10">
+		      <div class="radio">
+		        <label>
+		          <input id="optionsRadios1" name="representation" type="radio" value="original" aria-label="...">
+		        </label>
+		      </div>      
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Description</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-description" class="help-block">Just use the original value as representation.</span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Example</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.In digital circuits, one-hot is a group of bits among which the legal combinations of values are only those with a single high (1) bit and all the others low (0).[1] A similar implementation in which all bits are '1' except one '0' is sometimes called one-cold.</span>
+		    </div>
+		  </div>
+		  <br />
+		  <div class="form-group">
+		    <label for="original_checkbox" class="col-sm-2 control-label">Topic Model</label>
+		    <div class="col-sm-10">
+		      <div class="radio">
+		        <label>
+		          <input id="optionsRadios2" name="representation" type="radio" checked value="topicmodel" aria-label="...">
+		        </label>
+		      </div>      
+		    </div>
+		  </div>
+		  <div class="form-group">
+			  	<label for="inputnocluster" class="col-sm-2 control-label">Topic Number </label>
+		  	    <div class="col-sm-10">
+			      <input type="number" class="form-control" id="num_topics" name="num_topics" value ="10" placeholder="4">
+			    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Description</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-description" class="help-block">In machine learning and natural language processing, a topic model is a type of statistical model for discovering the abstract "topics" that occur in a collection of documents. Topic modeling is a frequently used text-mining tool for discovery of hidden semantic structures in a text body. Intuitively, given that a document is about a particular topic, one would expect particular words to appear in the document more or less frequently: "dog" and "bone" will appear more often in documents about dogs, "cat" and "meow" will appear in documents about cats, and "the" and "is" will appear equally in both.</span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Example</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+		    </div>
+		  </div>
+		  <br />
+		  <div class="form-group">
+		    <label for="original_checkbox" class="col-sm-2 control-label">Auto-encoder</label>
+		    <div class="col-sm-10">
+		      <div class="radio">
+		        <label>
+		          <input id="optionsRadios3" name="representation" type="radio" value="autoencoder" aria-label="...">
+		        </label>
+		      </div>      
+		    </div>
+		  </div>
+		  <div class="form-group">
+			  	<label for="inputnocluster" class="col-sm-2 control-label">Dimension Number </label>
+		  	    <div class="col-sm-10">
+			      <input type="number" class="form-control" id="num_dim" name="num_dim" value ="10" placeholder="4">
+			    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Description</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-description" class="help-block">An autoencoder, autoassociator or Diabolo network is an artificial neural network used for unsupervised learning of efficient codings. The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for the purpose of dimensionality reduction. Recently, the autoencoder concept has become more widely used for learning generative models of data.</span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Example</label>
+		    <div class="col-sm-10">
+				<span id="helpBlock-example" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+		    </div>
+		  </div>		  
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Next Step</button>
+		    </div>
+		  </div>
+		</form>
+		</div>
+	</div>
+</main>
+
+{% include "footer.html"%}
